@@ -33,7 +33,12 @@ console.log(MY_FAVORITE_BRANDS[0]);
 // 0. I have 3 favorite brands stored in MY_FAVORITE_BRANDS variable
 // 1. Create a new variable and assign it the link of the cheapest t-shirt
 // I can find on these e-shops
+
+const cheapTshirt = "https://www.faguo-store.com/fr/vetements/7606-arcy-t-shirt-en-coton-recycle-kaki.html";
+
 // 2. Log the variable
+
+//console.log(cheapTshirt);
 
 /**
  * 👕
@@ -44,28 +49,94 @@ console.log(MY_FAVORITE_BRANDS[0]);
  * 👕
  */
 
+
+
 // 🎯 TODO 2: Number of products
 // 1. Create a variable and assign it the number of products
+
+const itemNumber = marketplace.length;
+
 // 2. Log the variable
+
+//console.log(itemNumber);
 
 // 🎯 TODO 3: Brands name
 // 1. Create a variable and assign it the list of brands name only
+
+var nomMarque = [];
+
+for(let i = 0; i < itemNumber; i++) {
+
+  if(nomMarque.includes(marketplace[i].brand) == false) {nomMarque.push(marketplace[i].brand);}
+
+}
+
+
 // 2. Log the variable
+
+//console.log(nomMarque);
+
 // 3. Log how many brands we have
+
+//console.log(nomMarque.length);
+
 
 // 🎯 TODO 4: Sort by price
 // 1. Create a function to sort the marketplace products by price
+
+function OrderPrix(x) {
+
+  x.sort((a, b) => b.price - a.price);
+  return x
+}
+
 // 2. Create a variable and assign it the list of products by price from lowest to highest
+
+const decroissantMarket = OrderPrix(marketplace);
+
 // 3. Log the variable
+
+//console.log(decroissantMarket);
 
 // 🎯 TODO 5: Sort by date
 // 1. Create a function to sort the marketplace objects by products date
+
+function OrderDate(x) {
+
+  x.sort((a, b) => {
+
+    const A = new Date(a.released);
+    const B = new Date(b.released);
+
+    return B - A;
+
+  });
+
+  return x;
+}
+
 // 2. Create a variable and assign it the list of products by date from recent to old
+
+const dateMarket = OrderDate(marketplace);
+
 // 3. Log the variable
+
+//console.log(dateMarket);
 
 // 🎯 TODO 6: Filter a specific price range
 // 1. Filter the list of products between 50€ and 100€
+
+function InterPrix(x){
+
+  return x.price <= 100 && x.price >50;
+
+}
+
+const filtrePrix = marketplace.filter(InterPrix);
+
 // 2. Log the list
+
+console.log(filtrePrix);
 
 // 🎯 TODO 7: Average price
 // 1. Determine the average price of the marketplace
