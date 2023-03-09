@@ -20,8 +20,8 @@
         <select name="page" id="page-select"> </select>
       </div>
       <div id="filters">
-        <span>By reasonable price</span>
-        <span>By recently released</span>
+        <input id="price-checkbox" type="checkbox">By reasonable price</input></br>
+        <input id="release-checkbox" type="checkbox">By recently released</input>
         <div id="brand">
           <label for="brand-select">By brands:</label>
           <select name="brand" id="brand-select"> </select>
@@ -49,23 +49,23 @@
       </div>
       <div>
         <span>Number of new products</span>
-        <span>0</span>
+        <span id="nbProductsNew">0</span>
       </div>
-      <div>
+      <div id="p50-div">
         <span>p50 price value</span>
-        <span>0</span>
+        <span id="p50-value-span">0</span>
       </div>
-      <div>
+      <div id="p90-div">
         <span>p90 price value</span>
-        <span>0</span>
+        <span id="p90-value-span">0</span>
       </div>
-      <div>
+      <div id="p95-div">
         <span>p95 price value</span>
-        <span>0</span>
+        <span id="p95-value-span">0</span>
       </div>
       <div>
         <span>Last released date</span>
-        <span>2020-01-01</span>
+        <span id="lastReleasedDate"></span>
       </div>
     </section>
     <section id="products"></section>
